@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="onClickListener"
+            type="android.view.View.OnClickListener" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.lihang.caramerai.caramer.CameraSurfaceView
+            android:id="@+id/CameraSurfaceView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.lihang.caramerai.faceai.FaceView
+            android:id="@+id/face_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:layout_alignParentRight="true"
+            android:id="@+id/image_switch"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="10dp"
+            android:src="@mipmap/carm_switch"
+            android:onClick="@{onClickListener}"
+            />
+
+
+        <ImageView
+            android:layout_toLeftOf="@+id/image_switch"
+            android:id="@+id/image_flash"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="10dp"
+            android:src="@mipmap/flash_off"
+            android:onClick="@{onClickListener}"
+            android:visibility="gone"
+            />
+
+
+
+        <ImageView
+            android:onClick="@{onClickListener}"
+            android:id="@+id/image_take"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@mipmap/tack_photo"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="50dp"
+            android:tag="0"
+            />
+
+    </RelativeLayout>
+</layout>
